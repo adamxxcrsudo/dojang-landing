@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dojang Dynamics - Martial Arts Games Kits</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,367 +17,200 @@
   --border-hi: rgba(139,92,246,0.35);
   --purple:    #8b5cf6;
   --purple-hi: #a78bfa;
-  --purple-lo: #6d28d9;
-  --purple-dim: rgba(139,92,246,0.15);
   --white:     #f4f2ff;
   --muted:     rgba(244,242,255,0.45);
-  --muted2:    rgba(244,242,255,0.22);
-  --font: 'Manrope', sans-serif;
-  --mono: 'DM Mono', monospace;
 }
 
-html { scroll-behavior: smooth; }
 body {
-  font-family: var(--font);
+  font-family: 'Manrope', sans-serif;
   background: var(--bg);
   color: var(--white);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
 }
 
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 40px; height: 60px;
-  background: rgba(13,12,16,0.85);
+  padding: 0 5%; height: 70px;
+  background: rgba(13,12,16,0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
 }
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .nav-logo-icon {
-  width: 32px; height: 32px; border-radius: 8px;
-  background: var(--purple-dim); border: 1px solid var(--border-hi);
-  display: flex; align-items: center; justify-content: center; font-size: 15px;
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(139,92,246,0.15); border: 1px solid var(--border-hi);
+  display: flex; align-items: center; justify-content: center; font-size: 18px;
 }
-.nav-brand-eyebrow {
-  font-size: 9px; font-family: var(--mono);
-  text-transform: uppercase; letter-spacing: 0.14em;
-  color: var(--purple); line-height: 1; display: block;
-}
-.nav-brand-name {
-  font-size: 14px; font-weight: 700; color: var(--white);
-  letter-spacing: -0.01em; line-height: 1.2; display: block;
-}
-.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-brand-name { font-weight: 700; font-size: 15px; }
+
+.nav-links { display: flex; gap: 32px; list-style: none; }
 .nav-links a {
-  font-size: 13px; font-weight: 500; color: var(--muted);
-  text-decoration: none; transition: color 0.2s;
+  color: var(--muted); text-decoration: none; font-weight: 500; font-size: 14px;
 }
-.nav-links a:hover { color: var(--white); }
-.nav-right { display: flex; gap: 8px; }
+.nav-links a:hover { color: white; }
+
 .pill-btn {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 7px 16px; border-radius: 100px;
-  font-size: 12px; font-weight: 600; text-decoration: none;
-  transition: all 0.2s; font-family: var(--font); cursor: pointer; border: none;
+  padding: 8px 18px; border-radius: 999px;
+  font-size: 13px; font-weight: 600; text-decoration: none;
+  transition: all 0.2s;
 }
-.pill-ghost { background: var(--card2); border: 1px solid var(--border-hi); color: var(--white); }
-.pill-ghost:hover { background: var(--purple-dim); }
-.pill-primary { background: var(--purple); color: #fff; }
-.pill-primary:hover { background: var(--purple-hi); }
+.pill-ghost { background: var(--card2); border: 1px solid var(--border-hi); color: white; }
+.pill-primary { background: var(--purple); color: white; }
 
 /* HERO */
 .hero {
-  min-height: 100vh; display: flex; flex-direction: column;
-  justify-content: center; padding: 100px 40px 60px;
-  position: relative; overflow: hidden;
+  min-height: 100vh;
+  padding: 110px 5% 80px;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 .glow-tr {
-  position: absolute; top: -120px; right: -120px;
-  width: 700px; height: 700px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(109,40,217,0.18) 0%, transparent 65%);
+  position: absolute; top: -120px; right: -150px;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(139,92,246,0.18) 0%, transparent 70%);
+  border-radius: 50%;
   pointer-events: none;
 }
-.glow-bl {
-  position: absolute; bottom: -200px; left: -80px;
-  width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(139,92,246,0.09) 0%, transparent 65%);
-  pointer-events: none;
-}
+
 .hero-inner {
-  position: relative; z-index: 2;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 64px; align-items: center;
-  max-width: 1280px; margin: 0 auto; width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 10px; font-family: var(--mono);
-  text-transform: uppercase; letter-spacing: 0.14em; color: var(--purple);
-  padding: 5px 12px; border-radius: 100px;
-  background: var(--purple-dim); border: 1px solid var(--border-hi);
+
+.hero-content h1 {
+  font-size: clamp(42px, 6vw, 62px);
+  font-weight: 800;
+  line-height: 1.05;
   margin-bottom: 20px;
 }
-.hero-h1 {
-  font-size: clamp(38px, 4.5vw, 58px); font-weight: 800;
-  line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 20px;
+.hero-content h1 em { color: var(--purple-hi); font-style: normal; }
+
+.hero-content p {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 460px;
+  margin-bottom: 30px;
 }
-.hero-h1 em { font-style: normal; color: var(--purple-hi); }
-.hero-sub {
-  font-size: 16px; line-height: 1.7; color: var(--muted);
-  font-weight: 400; max-width: 420px; margin-bottom: 36px;
+
+.hero-actions {
+  display: flex; gap: 12px; flex-wrap: wrap;
 }
-.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .btn-lg {
-  padding: 13px 28px; border-radius: 100px;
-  font-size: 14px; font-weight: 700; text-decoration: none;
-  display: inline-flex; align-items: center; gap: 8px;
-  transition: all 0.2s; font-family: var(--font); cursor: pointer; border: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
-.btn-primary { background: var(--purple); color: #fff; }
-.btn-primary:hover { background: var(--purple-hi); transform: translateY(-1px); }
-.btn-ghost { background: var(--card2); color: var(--white); border: 1px solid var(--border-hi); }
-.btn-ghost:hover { background: var(--purple-dim); }
-.hero-stats {
-  display: flex; gap: 32px; margin-top: 48px;
-  padding-top: 32px; border-top: 1px solid var(--border);
-}
-.stat-num { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; }
-.stat-lbl {
-  font-size: 11px; font-family: var(--mono);
-  text-transform: uppercase; letter-spacing: 0.08em;
-  color: var(--muted); margin-top: 2px;
-}
+.btn-primary { background: var(--purple); color: white; }
+.btn-ghost { background: var(--card2); color: white; border: 1px solid var(--border-hi); }
 
-/* LOGO BAR */
+/* Logo Bar */
 .logo-bar {
-  padding: 20px 40px;
-  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-  background: var(--bg2); display: flex; align-items: center; gap: 16px;
-}
-.logo-bar-lbl {
-  font-size: 9px; font-family: var(--mono);
-  text-transform: uppercase; letter-spacing: 0.12em;
-  color: var(--muted2); white-space: nowrap; flex-shrink: 0;
-}
-.logo-bar-items { display: flex; align-items: center; gap: 48px; overflow: hidden; flex: 1; }
-.logo-bar-item {
-  font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
-  text-transform: uppercase; color: var(--muted2); white-space: nowrap;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--muted);
 }
 
-/* SECTION COMMONS */
-.section { padding: 100px 40px; }
+/* Sections */
+.section { padding: 110px 5%; }
 .section-inner { max-width: 1280px; margin: 0 auto; }
-.sec-eyebrow {
-  display: inline-block; font-size: 10px; font-family: var(--mono);
-  text-transform: uppercase; letter-spacing: 0.14em;
-  color: var(--purple); margin-bottom: 14px;
-}
+
 .sec-h2 {
-  font-size: clamp(32px, 4vw, 48px); font-weight: 800;
-  letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 14px;
-}
-.sec-sub {
-  font-size: 16px; line-height: 1.7; color: var(--muted);
-  font-weight: 400; max-width: 500px; margin-bottom: 56px;
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 16px;
 }
 
-/* FEATURES */
-.feat-bg { background: var(--bg2); }
+.sec-sub {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 50px;
+}
+
+/* Features */
 .feat-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1px; background: var(--border);
-  border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
 }
 .feat-card {
-  background: var(--card); padding: 36px 28px;
-  position: relative; overflow: hidden; transition: background 0.3s;
+  background: var(--card);
+  padding: 36px 28px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  transition: all 0.3s;
 }
-.feat-card:hover { background: var(--card2); }
-.feat-card::after {
-  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--purple-lo), var(--purple-hi));
-  transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+.feat-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-hi);
 }
-.feat-card:hover::after { transform: scaleX(1); }
 .feat-icon {
-  width: 40px; height: 40px; border-radius: 10px;
-  background: var(--purple-dim); border: 1px solid var(--border-hi);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 17px; margin-bottom: 20px;
-}
-.feat-h3 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px; }
-.feat-p { font-size: 13px; line-height: 1.7; color: var(--muted); }
-
-/* DRILLS */
-.drills-bg { background: var(--bg); }
-.cat-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
-.cat-pill {
-  padding: 7px 18px; border-radius: 100px; font-size: 12px; font-weight: 600;
-  border: 1px solid var(--border); color: var(--muted); cursor: pointer;
-  background: var(--card); transition: all 0.2s;
-}
-.cat-pill.on { background: var(--purple); border-color: var(--purple); color: #fff; }
-.cat-pill:hover:not(.on) { border-color: var(--border-hi); color: var(--white); }
-
-.drills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.drill-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 16px; overflow: hidden; cursor: pointer;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.drill-card:hover { border-color: var(--border-hi); transform: translateY(-3px); }
-.drill-thumb {
-  height: 160px; display: flex; align-items: center; justify-content: center;
-}
-.thumb-a { background: linear-gradient(135deg, #1a0a3d 0%, #2d1b69 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
-.thumb-b { background: linear-gradient(135deg, #150d30 0%, #3b1fa8 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
-.thumb-c { background: linear-gradient(135deg, #1e0a45 0%, #5b21b6 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
-
-.drill-body { padding: 18px; }
-.drill-cat-tag {
-  display: inline-block; padding: 3px 10px; border-radius: 100px;
-  font-size: 10px; font-weight: 600;
-  background: var(--purple-dim); color: var(--purple-hi); margin-bottom: 10px;
-}
-.drill-name { font-size: 16px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 6px; }
-.drill-blurb { font-size: 12px; line-height: 1.6; color: var(--muted); margin-bottom: 14px; }
-.drill-meta { display: flex; gap: 8px; flex-wrap: wrap; }
-.drill-meta-tag {
-  padding: 3px 10px; border-radius: 100px;
-  font-size: 10px; border: 1px solid var(--border-hi); color: var(--muted2);
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-/* PRICING */
-.price-bg { background: var(--bg2); }
-.price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+/* Pricing */
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
 .price-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 18px; padding: 32px; position: relative;
-  transition: border-color 0.2s;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 32px;
+  position: relative;
 }
-.price-card:hover { border-color: var(--border-hi); }
 .price-card.hot {
   border-color: var(--purple);
-  background: linear-gradient(160deg, #1c1630 0%, var(--card) 60%);
+  transform: scale(1.03);
 }
-.price-card.hot::before {
-  content: 'Most Popular'; position: absolute; top: -1px; left: 50%;
-  transform: translateX(-50%);
-  background: var(--purple); color: #fff; font-size: 10px; font-weight: 700;
-  padding: 4px 16px; border-radius: 0 0 10px 10px;
-  font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.08em;
-}
-.price-tier {
-  font-size: 10px; font-family: var(--mono);
-  text-transform: uppercase; letter-spacing: 0.12em;
-  color: var(--purple); margin-bottom: 10px;
-}
-.price-amt { font-size: 52px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin-bottom: 4px; }
-.price-per {
-  font-size: 11px; font-family: var(--mono); color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 28px;
-}
-.price-feats { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
-.price-feats li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
-.p-check {
-  width: 18px; height: 18px; border-radius: 50%;
-  background: var(--purple-dim); border: 1px solid var(--border-hi);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 9px; color: var(--purple); flex-shrink: 0;
-}
-.price-cta {
-  display: block; width: 100%; padding: 12px; border-radius: 100px;
-  font-size: 13px; font-weight: 700; text-align: center;
-  text-decoration: none; transition: all 0.2s;
-  font-family: var(--font); cursor: pointer; border: none;
-}
-.cta-ghost { background: transparent; border: 1px solid var(--border-hi); color: var(--white); }
-.cta-ghost:hover { background: var(--purple-dim); }
-.cta-purple { background: var(--purple); color: #fff; }
-.cta-purple:hover { background: var(--purple-hi); }
+.price-amt { font-size: 52px; font-weight: 800; margin: 10px 0; }
 
-/* TESTIMONIALS */
-.testi-bg { background: var(--bg); }
-.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+/* Testimonials */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
 .testi-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 16px; padding: 28px;
-  display: flex; flex-direction: column; gap: 20px;
-  transition: border-color 0.2s;
-}
-.testi-card:hover { border-color: var(--border-hi); }
-.testi-stars { color: var(--purple-hi); font-size: 13px; letter-spacing: 2px; }
-.testi-text { font-size: 14px; line-height: 1.7; color: var(--muted); font-weight: 400; flex: 1; }
-.testi-author { display: flex; align-items: center; gap: 12px; }
-.testi-av {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: var(--purple-dim); border: 1px solid var(--border-hi);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 700; color: var(--purple-hi); flex-shrink: 0;
-}
-.testi-name { font-size: 13px; font-weight: 700; }
-.testi-school {
-  font-size: 10px; font-family: var(--mono); color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.06em; margin-top: 1px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
 }
 
-/* CTA */
-.cta-sect {
-  padding: 100px 40px;
-  background: linear-gradient(160deg, #1a0e3d 0%, var(--bg) 55%);
-  position: relative; overflow: hidden;
-}
-.cta-radial {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-  width: 800px; height: 400px; border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(109,40,217,0.2) 0%, transparent 65%);
-  pointer-events: none;
-}
-.cta-inner {
-  max-width: 1280px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 48px; flex-wrap: wrap; position: relative; z-index: 1;
-}
-.cta-h2 { font-size: clamp(36px, 4.5vw, 54px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 10px; }
-.cta-sub { font-size: 15px; color: var(--muted); font-weight: 400; }
-.cta-acts { display: flex; gap: 10px; flex-wrap: wrap; }
-
-/* FOOTER */
-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 60px 40px 36px; }
-.footer-inner { max-width: 1280px; margin: 0 auto; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
-.footer-logo-mark { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-.footer-logo-icon {
-  width: 30px; height: 30px; border-radius: 8px;
-  background: var(--purple-dim); border: 1px solid var(--border-hi);
-  display: flex; align-items: center; justify-content: center; font-size: 13px;
-}
-.footer-brand { font-size: 14px; font-weight: 700; color: var(--white); }
-.footer-desc { font-size: 13px; line-height: 1.7; color: var(--muted); max-width: 260px; }
-.footer-col-ttl {
-  font-size: 9px; font-family: var(--mono);
-  text-transform: uppercase; letter-spacing: 0.12em;
-  color: var(--muted2); margin-bottom: 18px;
-}
-.footer-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
-.footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--white); }
-.footer-bottom {
-  display: flex; justify-content: space-between; align-items: center;
-  padding-top: 28px; border-top: 1px solid var(--border);
-  font-size: 11px; font-family: var(--mono);
-  text-transform: uppercase; letter-spacing: 0.06em;
-  color: var(--muted2); flex-wrap: wrap; gap: 10px;
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero-content p { margin: 0 auto 30px; }
 }
 
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.a { opacity: 0; animation: fadeUp 0.65s ease forwards; }
-.d1{animation-delay:0.1s} .d2{animation-delay:0.22s} .d3{animation-delay:0.34s}
-.d4{animation-delay:0.46s} .d5{animation-delay:0.58s} .d6{animation-delay:0.72s}
-
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .hero-inner,.feat-grid,.drills-grid,.price-grid,.testi-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .nav-links{display:none}
-  nav,.section,.logo-bar,footer,.cta-sect{padding-left:24px;padding-right:24px}
+@media (max-width: 640px) {
+  nav { padding: 0 20px; height: 65px; }
+  .nav-links { display: none; }
+  .section { padding: 80px 20px; }
 }
 </style>
 </head>
@@ -389,8 +221,8 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
   <a href="#" class="nav-logo">
     <div class="nav-logo-icon">🥋</div>
     <div>
-      <span class="nav-brand-eyebrow">Dojang Dynamics</span>
-      <span class="nav-brand-name">Games Platform</span>
+      <span style="font-size:10px; color:var(--purple); letter-spacing:1px;">DOJANG DYNAMICS</span><br>
+      <span class="nav-brand-name">Martial Arts Games Kits</span>
     </div>
   </a>
   <ul class="nav-links">
@@ -399,7 +231,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#testimonials">Reviews</a></li>
   </ul>
-  <div class="nav-right">
+  <div>
     <a href="https://shop.dojangdynamics.store/" class="pill-btn pill-ghost">Shop our kits</a>
     <a href="https://app.dojangdynamics.store/" class="pill-btn pill-primary">Use our app!</a>
   </div>
@@ -408,220 +240,146 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
 <!-- HERO -->
 <section class="hero">
   <div class="glow-tr"></div>
-  <div class="glow-bl"></div>
   <div class="hero-inner">
-
-    <div>
-      <div class="eyebrow a d1">Games kits for martial arts classes</div>
-      <h1 class="hero-h1 a d2">Fast, structured<br><em>coaching tools</em><br>for your dojang.</h1>
-      <p class="hero-sub a d3">A library of engaging games and drills designed for live kids' classes with peace of mind, knowing you'll have all the correct equipment.</p>
-      <div class="hero-actions a d4">
+    <div class="hero-content">
+      <div style="display:inline-block; background:rgba(139,92,246,0.15); color:var(--purple); font-size:11px; padding:6px 16px; border-radius:999px; margin-bottom:20px;">
+        Games Kits for Martial Arts Classes
+      </div>
+      <h1>Fast, structured<br><em>coaching tools</em><br>for your dojang.</h1>
+      <p>A library of engaging games and drills designed for live kids' classes with peace of mind, knowing you'll have all the correct equipment.</p>
+      
+      <div class="hero-actions">
         <a href="https://app.dojangdynamics.store/" class="btn-lg btn-primary">Dojang Dynamics App →</a>
         <a href="#drills" class="btn-lg btn-ghost">Browse Games</a>
-      </div>
-      <div class="hero-stats a d5">
-        <div><div class="stat-num">50+</div><div class="stat-lbl">Drills &amp; Games</div></div>
-        <div><div class="stat-num">All</div><div class="stat-lbl">Ages</div></div>
-        <div><div class="stat-num">All</div><div class="stat-lbl">Skill Levels</div></div>
-      </div>
-    </div>
-
-    
-<!-- LOGO BAR -->
-<div class="logo-bar">
-  <span class="logo-bar-lbl">Used in: </span>
-  <div class="logo-bar-items">
-    <span class="logo-bar-item">Tiger Taekwondo</span>
-    <span class="logo-bar-item">Iron Fist Academy</span>
-    <span class="logo-bar-item">Peak Martial Arts</span>
-    <span class="logo-bar-item">Champions TKD</span>
-    <span class="logo-bar-item">Dragon School</span>
-    <span class="logo-bar-item">Black Belt UK</span>
-  </div>
-</div>
-
-<!-- FEATURES -->
-<section class="section feat-bg" id="features">
-  <div class="section-inner">
-    <div class="sec-eyebrow">Kit Features</div>
-    <h2 class="sec-h2">Built for the mat.<br>Not the office.</h2>
-    <p class="sec-sub">Every feature designed around what happens during a live class. Pull up a drill in seconds and get straight to teaching.</p>
-    <div class="feat-grid">
-      <div class="feat-card">
-        <div class="feat-icon">🎮</div>
-        <h3 class="feat-h3">Drill Library</h3>
-        <p class="feat-p">A curated collection of structured games across Coordination, Leadership and Striking — each one ready to run instantly in class.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">🔖</div>
-        <h3 class="feat-h3">Save &amp; Organise</h3>
-        <p class="feat-p">Bookmark your favourites and build a personal shortlist for each class. Your saved drills are always one tap away during a session.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">⭐</div>
-        <h3 class="feat-h3">Projang Premium</h3>
-        <p class="feat-p">Unlock the full premium drill library. Exclusive games, advanced progressions, and fresh content added every single month. *(Only obtainable through kit purchase)*</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">🔍</div>
-        <h3 class="feat-h3">Smart Search</h3>
-        <p class="feat-p">Search by category, skill intent, player count, or duration. Find the perfect drill for any class situation in under five seconds.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">👥</div>
-        <h3 class="feat-h3">All Ages &amp; Levels</h3>
-        <p class="feat-p">Every drill is tagged by difficulty and player count so you can match the game to your class — white belts to advanced students.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">📱</div>
-        <h3 class="feat-h3">Any Screen, Anywhere</h3>
-        <p class="feat-p">Use on a tablet on the mat or a phone in your pocket. Designed for the floor, not a desk.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DRILL LIBRARY -->
-<section class="section drills-bg" id="drills">
+<!-- LOGO BAR -->
+<div class="logo-bar">
+  <strong>Used in:</strong> 
+  Tiger Taekwondo • Iron Fist Academy • Peak Martial Arts • Champions TKD • Dragon School • Black Belt UK
+</div>
+
+<!-- FEATURES -->
+<section class="section" id="features">
   <div class="section-inner">
-    <div class="sec-eyebrow">Library</div>
-    <h2 class="sec-h2">Structured drills for<br>live coaching.</h2>
-    <p class="sec-sub">Every game is designed to keep kids engaged, moving and learning martial arts principles — not just filling time.</p>
-    <div class="cat-pills">
-      <span class="cat-pill on">All</span>
-      <span class="cat-pill">Coordination</span>
-      <span class="cat-pill">Leadership</span>
-      <span class="cat-pill">Striking</span>
+    <h2 class="sec-h2">Built for the mat.<br>Not the office.</h2>
+    <p class="sec-sub">Every feature designed around what happens during a live class. Pull up a drill in seconds and get straight to teaching.</p>
+    
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🎮</div>
+        <h3>Drill Library</h3>
+        <p>A curated collection of structured games across Coordination, Leadership and Striking — each one ready to run instantly in class.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔖</div>
+        <h3>Save & Organise</h3>
+        <p>Bookmark your favourites and build a personal shortlist for each class. Your saved drills are always one tap away during a session.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">⭐</div>
+        <h3>Projang Premium</h3>
+        <p>Unlock the full premium drill library. Exclusive games, advanced progressions, and fresh content added every single month.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔍</div>
+        <h3>Smart Search</h3>
+        <p>Search by category, skill intent, player count, or duration. Find the perfect drill for any class situation in under five seconds.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">👥</div>
+        <h3>All Ages & Levels</h3>
+        <p>Every drill is tagged by difficulty and player count so you can match the game to your class — white belts to advanced students.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📱</div>
+        <h3>Any Screen, Anywhere</h3>
+        <p>Use on a tablet on the mat or a phone in your pocket. Designed for the floor, not a desk.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="section price-bg" id="pricing">
+<section class="section" id="pricing" style="background: var(--bg2);">
   <div class="section-inner">
-    <div class="sec-eyebrow">Kit &amp; Pricing</div>
     <h2 class="sec-h2">Simple pricing.<br>Unlock everything.</h2>
     <p class="sec-sub">Start free with the core games library.</p>
+    
     <div class="price-grid">
       <div class="price-card">
-        <div class="price-tier">Free</div>
+        <div style="color:var(--purple); font-size:13px; font-weight:600;">FREE</div>
         <div class="price-amt">£0</div>
-        <div class="price-per">Forever free</div>
-        <ul class="price-feats">
-          <li><span class="p-check">✓</span>Core drill library</li>
-          <li><span class="p-check">✓</span>Save up to 3 drills</li>
-          <li><span class="p-check">✓</span>All categories</li>
-          <li><span class="p-check">✓</span>Works on any device</li>
-          <li><span class="p-check">✓</span>Smart search</li>
+        <p style="margin-bottom:30px;">Forever free</p>
+        <ul style="list-style:none; margin-bottom:40px; line-height:2.2;">
+          <li>✓ Core drill library</li>
+          <li>✓ Save up to 3 drills</li>
+          <li>✓ All categories</li>
+          <li>✓ Works on any device</li>
+          <li>✓ Smart search</li>
         </ul>
-        <a href="https://app.dojangdynamics.store/" class="price-cta cta-ghost">Use for free</a>
+        <a href="https://app.dojangdynamics.store/" class="btn-lg btn-ghost" style="width:100%; text-align:center;">Use for free</a>
       </div>
+      
       <div class="price-card hot">
-        <div class="price-tier">Dynamic Games Kit</div>
+        <div style="color:var(--purple); font-size:13px; font-weight:600;">MOST POPULAR</div>
         <div class="price-amt">£49.99</div>
-        <div class="price-per">One time</div>
-        <ul class="price-feats">
-          <li><span class="p-check">✓</span>Exclusive access to premium drill library *(Projang)*</li>
-          <li><span class="p-check">✓</span>New drills every month</li>
-          <li><span class="p-check">✓</span>Unlimited saved drills</li>
-          <li><span class="p-check">✓</span>Advanced progressions</li>
-          <li><span class="p-check">✓</span>Priority support</li>
-          <li><span class="p-check">✓</span>Early feature access</li>
+        <p style="margin-bottom:30px;">One time purchase</p>
+        <ul style="list-style:none; margin-bottom:40px; line-height:2.2;">
+          <li>✓ Full premium drill library</li>
+          <li>✓ New drills every month</li>
+          <li>✓ Unlimited saved drills</li>
+          <li>✓ Advanced progressions</li>
+          <li>✓ Priority support</li>
         </ul>
-        <a href="https://shop.dojangdynamics.store/" class="price-cta cta-purple">Shop our kits</a>
+        <a href="https://shop.dojangdynamics.store/" class="btn-lg btn-primary" style="width:100%; text-align:center;">Shop our kits</a>
       </div>
+    </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="section testi-bg" id="testimonials">
+<section class="section" id="testimonials">
   <div class="section-inner">
-    <div class="sec-eyebrow">Reviews</div>
     <h2 class="sec-h2">Coaches love it.</h2>
-    <div class="testi-grid" style="margin-top:56px;">
+    
+    <div class="testi-grid">
       <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Dragon Tail Run is my kids' favourite warm-up. I can pull it up in two seconds mid-class — no fumbling with notes or trying to remember the rules."</p>
-        <div class="testi-author">
-          <div class="testi-av">MK</div>
-          <div><div class="testi-name">Master Kim</div><div class="testi-school">Golden Tiger Taekwondo</div></div>
-        </div>
+        <p style="font-size:15px; line-height:1.7; margin-bottom:25px;">"Dragon Tail Run is my kids' favourite warm-up. I can pull it up in two seconds mid-class — no fumbling with notes."</p>
+        <strong>Master Kim</strong><br>
+        <small>Golden Tiger Taekwondo</small>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"My junior classes are so much more structured. Having a library of ready-to-go games means I plan better sessions — not just wing it every time."</p>
-        <div class="testi-author">
-          <div class="testi-av">SP</div>
-          <div><div class="testi-name">Sensei Patel</div><div class="testi-school">Iron Fist Karate</div></div>
-        </div>
+        <p style="font-size:15px; line-height:1.7; margin-bottom:25px;">"My junior classes are so much more structured. Having a library of ready-to-go games means I plan better sessions."</p>
+        <strong>Sensei Patel</strong><br>
+        <small>Iron Fist Karate</small>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"The Projang library is brilliant. New drills keep classes fresh and kids are constantly surprised. Retention has improved noticeably since we started using it."</p>
-        <div class="testi-author">
-          <div class="testi-av">JL</div>
-          <div><div class="testi-name">Coach Lopez</div><div class="testi-school">Champions MMA Academy</div></div>
-        </div>
+        <p style="font-size:15px; line-height:1.7; margin-bottom:25px;">"The Projang library is brilliant. New drills keep classes fresh and kids are constantly surprised. Retention has improved noticeably."</p>
+        <strong>Coach Lopez</strong><br>
+        <small>Champions MMA Academy</small>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-sect">
-  <div class="cta-radial"></div>
-  <div class="cta-inner">
-    <div>
-      <h2 class="cta-h2">Ready to run your<br>best class yet?</h2>
-      <p class="cta-sub">Easy to buy. Amazing content. Fast delivery.</p>
-    </div>
-    <div class="cta-acts">
-      <a href="https://shop.dojangdynamics.store/" class="btn-lg btn-primary">Visit our store →</a>
-    </div>
+<section class="section" style="background: linear-gradient(160deg, #1a0e3d 0%, var(--bg) 60%); text-align:center;">
+  <div class="section-inner">
+    <h2 style="font-size: clamp(36px, 5.5vw, 54px); margin-bottom:20px;">Ready to run your best class yet?</h2>
+    <p style="font-size:17px; color:var(--muted); max-width:600px; margin:0 auto 40px;">Easy to buy. Amazing content. Fast delivery.</p>
+    <a href="https://shop.dojangdynamics.store/" class="btn-lg btn-primary">Visit our store →</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo-mark">
-          <div class="footer-logo-icon">🥋</div>
-          <span class="footer-brand">Dojang Dynamics</span>
-        </div>
-        <p class="footer-desc">Fast, structured games kits for martial arts classes. Built for coaches who want to spend more time teaching.</p>
-      </div>
-      <div>
-        <div class="footer-col-ttl">Platform</div>
-        <ul class="footer-links">
-          <li><a href="#drills">Drill Library</a></li>
-          <li><a href="#pricing">Projang</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="https://shop.dojangdynamics.store/">Shop</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-ttl">Company</div>
-        <ul class="footer-links">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-ttl">Legal</div>
-        <ul class="footer-links">
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Dojang Dynamics. All rights reserved.</span>
-      <span>Built for martial arts coaches worldwide</span>
-    </div>
-  </div>
+<footer style="background:var(--bg2); padding:60px 5% 30px; text-align:center; font-size:13px; color:var(--muted);">
+  <p>© 2026 Dojang Dynamics. All rights reserved.</p>
+  <p style="margin-top:10px;">Built for martial arts coaches worldwide</p>
 </footer>
+
 </body>
 </html>
