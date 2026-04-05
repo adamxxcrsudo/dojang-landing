@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dojang Dynamics — Martial Arts Games Platform</title>
+<title>Dojang Dynamics - Martial Arts Games Kits</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -140,118 +140,6 @@ nav {
   text-transform: uppercase; letter-spacing: 0.08em;
   color: var(--muted); margin-top: 2px;
 }
-
-/* APP MOCK */
-.mock-wrap { position: relative; }
-.mock-glow {
-  position: absolute; inset: -40px;
-  background: radial-gradient(ellipse at 50% 50%, rgba(109,40,217,0.22) 0%, transparent 70%);
-  pointer-events: none;
-}
-.app-mock {
-  background: var(--card); border: 1px solid var(--border-hi);
-  border-radius: 20px; overflow: hidden; position: relative; z-index: 1;
-  box-shadow: 0 0 80px rgba(109,40,217,0.22), 0 40px 80px rgba(0,0,0,0.55);
-}
-.mock-header {
-  padding: 18px 20px 14px; border-bottom: 1px solid var(--border);
-  display: flex; justify-content: space-between; align-items: flex-start;
-}
-.mock-eyebrow {
-  font-size: 9px; font-family: var(--mono);
-  text-transform: uppercase; letter-spacing: 0.14em;
-  color: var(--purple); margin-bottom: 4px;
-}
-.mock-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
-.mock-btn-row { display: flex; gap: 6px; }
-.mock-btn {
-  padding: 5px 12px; border-radius: 100px;
-  font-size: 10px; font-weight: 600;
-  border: 1px solid var(--border-hi);
-  background: var(--card2); color: var(--muted); font-family: var(--font);
-}
-.mock-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
-
-.drill-featured {
-  display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: start;
-  background: var(--card2); border: 1px solid var(--border);
-  border-radius: 14px; padding: 16px;
-}
-.cat-tag {
-  display: inline-block; padding: 3px 10px; border-radius: 100px;
-  font-size: 10px; font-weight: 600;
-  background: rgba(255,255,255,0.08); color: var(--muted); margin-bottom: 8px;
-}
-.drill-title { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
-.drill-desc { font-size: 11px; line-height: 1.6; color: var(--muted); margin-bottom: 12px; }
-.drill-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
-.drill-tag {
-  padding: 3px 10px; border-radius: 100px;
-  font-size: 10px; font-weight: 500;
-  border: 1px solid var(--border-hi); color: var(--muted2);
-}
-.drill-btns { display: flex; gap: 8px; }
-.btn-open {
-  padding: 7px 16px; border-radius: 100px; background: var(--purple);
-  color: #fff; font-size: 11px; font-weight: 700;
-  border: none; cursor: pointer; font-family: var(--font);
-}
-.btn-save {
-  padding: 7px 16px; border-radius: 100px;
-  background: var(--card); border: 1px solid var(--border-hi);
-  color: var(--white); font-size: 11px; font-weight: 600;
-  cursor: pointer; font-family: var(--font);
-}
-.drill-illus {
-  width: 100px; height: 100px; border-radius: 12px;
-  background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 50%, #6d28d9 100%);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-
-.mini-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-.mini-card {
-  background: var(--card2); border: 1px solid var(--border);
-  border-radius: 12px; padding: 12px;
-}
-.mini-lbl {
-  font-size: 8px; font-family: var(--mono);
-  text-transform: uppercase; letter-spacing: 0.1em;
-  color: var(--purple); margin-bottom: 6px;
-}
-.mini-val { font-size: 22px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; margin-bottom: 2px; }
-.mini-sub { font-size: 9px; color: var(--muted); line-height: 1.4; }
-.mini-dots { display: flex; gap: 4px; margin-top: 8px; }
-.mini-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border-hi); }
-.mini-dot.on { background: var(--purple); }
-.mini-bar { margin-top: 8px; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
-.mini-bar-fill { height: 100%; background: var(--purple); border-radius: 2px; }
-
-.mock-search {
-  background: var(--card2); border: 1px solid var(--border);
-  border-radius: 100px; padding: 9px 16px;
-  display: flex; align-items: center; gap: 8px;
-}
-.mock-search-txt { font-size: 11px; color: var(--muted2); }
-.mock-filters { display: flex; gap: 6px; }
-.mf {
-  padding: 5px 14px; border-radius: 100px;
-  font-size: 10px; font-weight: 600;
-  border: 1px solid var(--border); color: var(--muted);
-}
-.mf.on { background: var(--purple); border-color: var(--purple); color: #fff; }
-
-.mock-nav {
-  margin: 4px 16px 16px;
-  background: var(--bg2); border-radius: 100px;
-  padding: 10px 0; display: flex; justify-content: space-around;
-  border: 1px solid var(--border);
-}
-.mock-nav-item {
-  display: flex; flex-direction: column; align-items: center; gap: 3px;
-  font-size: 9px; font-family: var(--mono); color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 16px;
-}
-.mock-nav-item.on { color: var(--white); }
 
 /* LOGO BAR */
 .logo-bar {
@@ -512,8 +400,8 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
     <li><a href="#testimonials">Reviews</a></li>
   </ul>
   <div class="nav-right">
-    <a href="https://app.dojangdynamics.store/" class="pill-btn pill-ghost">Sign In</a>
-    <a href="https://app.dojangdynamics.store/" class="pill-btn pill-primary">Start Free Trial</a>
+    <a href="https://shop.dojangdynamics.store/" class="pill-btn pill-ghost">Shop our kits</a>
+    <a href="https://app.dojangdynamics.store/" class="pill-btn pill-primary">Use our app!</a>
   </div>
 </nav>
 
@@ -524,107 +412,24 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
   <div class="hero-inner">
 
     <div>
-      <div class="eyebrow a d1">🎮 For Martial Arts Classes</div>
+      <div class="eyebrow a d1">Games kits for martial arts classes</div>
       <h1 class="hero-h1 a d2">Fast, structured<br><em>coaching tools</em><br>for your dojang.</h1>
-      <p class="hero-sub a d3">A library of engaging games and drills designed for live kids' classes. Keep students focused, active, and having fun — every session.</p>
+      <p class="hero-sub a d3">A library of engaging games and drills designed for live kids' classes with peace of mind, knowing you'll have all the correct equipment.</p>
       <div class="hero-actions a d4">
-        <a href="https://app.dojangdynamics.store/" class="btn-lg btn-primary">Open Drill Library →</a>
+        <a href="https://app.dojangdynamics.store/" class="btn-lg btn-primary">Dojang Dynamics App →</a>
         <a href="#drills" class="btn-lg btn-ghost">Browse Games</a>
       </div>
       <div class="hero-stats a d5">
         <div><div class="stat-num">50+</div><div class="stat-lbl">Drills &amp; Games</div></div>
-        <div><div class="stat-num">3</div><div class="stat-lbl">Categories</div></div>
+        <div><div class="stat-num">All</div><div class="stat-lbl">Ages</div></div>
         <div><div class="stat-num">All</div><div class="stat-lbl">Skill Levels</div></div>
       </div>
     </div>
 
-    <!-- APP MOCK -->
-    <div class="mock-wrap a d6">
-      <div class="mock-glow"></div>
-      <div class="app-mock">
-        <div class="mock-header">
-          <div>
-            <div class="mock-eyebrow">Dojang Dynamics</div>
-            <div class="mock-title">Fast, structured coaching tools</div>
-          </div>
-          <div class="mock-btn-row">
-            <span class="mock-btn">Projang Active</span>
-            <span class="mock-btn">Owner Portal</span>
-          </div>
-        </div>
-        <div class="mock-body">
-          <div class="drill-featured">
-            <div>
-              <span class="cat-tag">Coordination</span>
-              <div class="drill-title">Dragon Tail Run</div>
-              <div class="drill-desc">Players protect their own tail marker while chasing and collecting others across the floor.</div>
-              <div class="drill-tags">
-                <span class="drill-tag">12 players</span>
-                <span class="drill-tag">10 min</span>
-                <span class="drill-tag">All Levels</span>
-              </div>
-              <div class="drill-btns">
-                <button class="btn-open">Open Drill</button>
-                <button class="btn-save">Saved</button>
-              </div>
-            </div>
-            <div class="drill-illus">
-              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
-                <circle cx="36" cy="36" r="30" stroke="rgba(139,92,246,0.4)" stroke-width="2"/>
-                <circle cx="36" cy="36" r="22" stroke="rgba(139,92,246,0.55)" stroke-width="2"/>
-                <circle cx="36" cy="36" r="14" stroke="rgba(167,139,250,0.7)" stroke-width="2"/>
-                <circle cx="36" cy="36" r="7" fill="rgba(167,139,250,0.9)"/>
-              </svg>
-            </div>
-          </div>
-          <div class="mini-row">
-            <div class="mini-card">
-              <div class="mini-lbl">Library</div>
-              <div class="mini-val">04</div>
-              <div class="mini-sub">drills ready to run</div>
-              <div class="mini-bar"><div class="mini-bar-fill" style="width:45%"></div></div>
-            </div>
-            <div class="mini-card">
-              <div class="mini-lbl">Saved</div>
-              <div class="mini-val">01</div>
-              <div class="mini-sub">saved for this installation</div>
-              <div class="mini-dots">
-                <div class="mini-dot"></div><div class="mini-dot"></div><div class="mini-dot on"></div>
-              </div>
-            </div>
-            <div class="mini-card">
-              <div class="mini-lbl">Projang</div>
-              <div class="mini-val" style="font-size:15px;padding-top:3px;">Unlocked</div>
-              <div class="mini-sub">premium drills available</div>
-              <div style="margin-top:8px;font-size:10px;color:var(--purple);font-weight:600;">Open Projang →</div>
-            </div>
-          </div>
-          <div class="mock-search">
-            <span style="color:var(--muted);font-size:12px;">🔍</span>
-            <span class="mock-search-txt">Search drills, categories, intent</span>
-          </div>
-          <div class="mock-filters">
-            <span class="mf on">All</span>
-            <span class="mf">Coordination</span>
-            <span class="mf">Leadership</span>
-            <span class="mf">Striking</span>
-          </div>
-        </div>
-        <div class="mock-nav">
-          <div class="mock-nav-item on"><span>⊞</span> Library</div>
-          <div class="mock-nav-item"><span>🔖</span> Saved</div>
-          <div class="mock-nav-item"><span>⭐</span> Projang</div>
-          <div class="mock-nav-item"><span>⚙</span> Settings</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+    
 <!-- LOGO BAR -->
 <div class="logo-bar">
-  <span class="logo-bar-lbl">Used in dojangs at</span>
+  <span class="logo-bar-lbl">Used in: </span>
   <div class="logo-bar-items">
     <span class="logo-bar-item">Tiger Taekwondo</span>
     <span class="logo-bar-item">Iron Fist Academy</span>
@@ -638,7 +443,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
 <!-- FEATURES -->
 <section class="section feat-bg" id="features">
   <div class="section-inner">
-    <div class="sec-eyebrow">Platform Features</div>
+    <div class="sec-eyebrow">Kit Features</div>
     <h2 class="sec-h2">Built for the mat.<br>Not the office.</h2>
     <p class="sec-sub">Every feature designed around what happens during a live class. Pull up a drill in seconds and get straight to teaching.</p>
     <div class="feat-grid">
@@ -655,7 +460,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
       <div class="feat-card">
         <div class="feat-icon">⭐</div>
         <h3 class="feat-h3">Projang Premium</h3>
-        <p class="feat-p">Unlock the full premium drill library. Exclusive games, advanced progressions, and fresh content added every single month.</p>
+        <p class="feat-p">Unlock the full premium drill library. Exclusive games, advanced progressions, and fresh content added every single month. *(Only obtainable through kit purchase)*</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon">🔍</div>
@@ -669,8 +474,8 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
       </div>
       <div class="feat-card">
         <div class="feat-icon">📱</div>
-        <h3 class="feat-h3">Any Screen</h3>
-        <p class="feat-p">Use on a tablet on the mat, a phone in your pocket, or a TV on the wall. Designed for the dojang floor, not a desk.</p>
+        <h3 class="feat-h3">Any Screen, Anywhere</h3>
+        <p class="feat-p">Use on a tablet on the mat or a phone in your pocket. Designed for the floor, not a desk.</p>
       </div>
     </div>
   </div>
@@ -687,73 +492,6 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
       <span class="cat-pill">Coordination</span>
       <span class="cat-pill">Leadership</span>
       <span class="cat-pill">Striking</span>
-    </div>
-    <div class="drills-grid">
-      <div class="drill-card">
-        <div class="drill-thumb">
-          <div class="thumb-a">
-            <svg width="200" height="100" viewBox="0 0 200 100" fill="none" style="opacity:0.65;">
-              <path d="M0 60 C30 20,50 80,80 50 C110 20,130 80,160 50 C180 30,190 60,200 55" stroke="rgba(167,139,250,0.9)" stroke-width="2.5" fill="none"/>
-              <path d="M0 72 C30 32,50 92,80 62 C110 32,130 92,160 62 C180 42,190 72,200 67" stroke="rgba(139,92,246,0.45)" stroke-width="2" fill="none"/>
-            </svg>
-          </div>
-        </div>
-        <div class="drill-body">
-          <span class="drill-cat-tag">Coordination</span>
-          <div class="drill-name">Dragon Tail Run</div>
-          <div class="drill-blurb">Players protect their tail marker while chasing and collecting others across the floor.</div>
-          <div class="drill-meta">
-            <span class="drill-meta-tag">12 players</span>
-            <span class="drill-meta-tag">10 min</span>
-            <span class="drill-meta-tag">All Levels</span>
-          </div>
-        </div>
-      </div>
-      <div class="drill-card">
-        <div class="drill-thumb">
-          <div class="thumb-b">
-            <svg width="160" height="100" viewBox="0 0 160 100" fill="none" style="opacity:0.7;">
-              <rect x="20" y="52" width="22" height="43" rx="11" fill="rgba(139,92,246,0.6)"/>
-              <rect x="55" y="32" width="22" height="63" rx="11" fill="rgba(109,40,217,0.5)"/>
-              <rect x="90" y="42" width="22" height="53" rx="11" fill="rgba(139,92,246,0.7)"/>
-              <rect x="125" y="22" width="22" height="73" rx="11" fill="rgba(167,139,250,0.5)"/>
-            </svg>
-          </div>
-        </div>
-        <div class="drill-body">
-          <span class="drill-cat-tag">Leadership</span>
-          <div class="drill-name">Follow the Leader</div>
-          <div class="drill-blurb">Students take turns leading the group through movements and combinations.</div>
-          <div class="drill-meta">
-            <span class="drill-meta-tag">8 players</span>
-            <span class="drill-meta-tag">8 min</span>
-            <span class="drill-meta-tag">Beginner</span>
-          </div>
-        </div>
-      </div>
-      <div class="drill-card">
-        <div class="drill-thumb">
-          <div class="thumb-c">
-            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" style="opacity:0.75;">
-              <circle cx="60" cy="60" r="50" stroke="rgba(139,92,246,0.35)" stroke-width="2"/>
-              <circle cx="60" cy="60" r="38" stroke="rgba(139,92,246,0.5)" stroke-width="2"/>
-              <circle cx="60" cy="60" r="26" stroke="rgba(167,139,250,0.65)" stroke-width="2"/>
-              <circle cx="60" cy="60" r="14" stroke="rgba(167,139,250,0.85)" stroke-width="2"/>
-              <circle cx="60" cy="60" r="6" fill="rgba(167,139,250,1)"/>
-            </svg>
-          </div>
-        </div>
-        <div class="drill-body">
-          <span class="drill-cat-tag">Striking</span>
-          <div class="drill-name">Target Kombat</div>
-          <div class="drill-blurb">Precision striking drill with moving targets. Develops focus, control and accuracy.</div>
-          <div class="drill-meta">
-            <span class="drill-meta-tag">Pairs</span>
-            <span class="drill-meta-tag">12 min</span>
-            <span class="drill-meta-tag">Intermediate</span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
