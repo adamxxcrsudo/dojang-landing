@@ -3,132 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dojang Dynamics - Martial Arts Games Kits</title>
+<title>Dojang Dynamics - Martial Arts Kits</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+/* RESET & ROOT */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --bg:        #0d0c10;
-  --bg2:       #121117;
-  --card:      #18161f;
-  --card2:     #1e1b28;
-  --border:    rgba(255,255,255,0.07);
-  --border-hi: rgba(139,92,246,0.35);
-  --purple:    #8b5cf6;
-  --purple-hi: #a78bfa;
-  --purple-lo: #6d28d9;
-  --purple-dim: rgba(139,92,246,0.15);
-  --white:     #f4f2ff;
-  --muted:     rgba(244,242,255,0.45);
-  --muted2:    rgba(244,242,255,0.22);
-  --font: 'Manrope', sans-serif;
-  --mono: 'DM Mono', monospace;
+  --bg:#0d0c10; --bg2:#121117; --card:#18161f; --card2:#1e1b28;
+  --border:rgba(255,255,255,0.07); --border-hi:rgba(139,92,246,0.35);
+  --purple:#8b5cf6; --purple-hi:#a78bfa; --purple-lo:#6d28d9; --purple-dim:rgba(139,92,246,0.15);
+  --white:#f4f2ff; --muted:rgba(244,242,255,0.45); --muted2:rgba(244,242,255,0.22);
+  --font:'Manrope',sans-serif; --mono:'DM Mono',monospace;
 }
-
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--white);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
+html{scroll-behavior:smooth;} 
+body{font-family:var(--font);background:var(--bg);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 
 /* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 40px; height: 60px;
-  background: rgba(13,12,16,0.85);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nav-logo-icon {
-  width: 32px; height: 32px; border-radius: 8px;
-  background: var(--purple-dim); border: 1px solid var(--border-hi);
-  display: flex; align-items: center; justify-content: center; font-size: 15px;
-}
-.nav-brand-eyebrow {
-  font-size: 9px; font-family: var(--mono);
-  text-transform: uppercase; letter-spacing: 0.14em;
-  color: var(--purple); line-height: 1; display: block;
-}
-.nav-brand-name {
-  font-size: 14px; font-weight: 700; color: var(--white);
-  letter-spacing: -0.01em; line-height: 1.2; display: block;
-}
-.nav-links { display: flex; gap: 28px; list-style: none; }
-.nav-links a {
-  font-size: 13px; font-weight: 500; color: var(--muted);
-  text-decoration: none; transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--white); }
-.nav-right { display: flex; gap: 8px; }
-.pill-btn {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 7px 16px; border-radius: 100px;
-  font-size: 12px; font-weight: 600; text-decoration: none;
-  transition: all 0.2s; font-family: var(--font); cursor: pointer; border: none;
-}
-.pill-ghost { background: var(--card2); border: 1px solid var(--border-hi); color: var(--white); }
-.pill-ghost:hover { background: var(--purple-dim); }
-.pill-primary { background: var(--purple); color: #fff; }
-.pill-primary:hover { background: var(--purple-hi); }
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:60px;background:rgba(13,12,16,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-icon{width:32px;height:32px;border-radius:8px;background:var(--purple-dim);border:1px solid var(--border-hi);display:flex;align-items:center;justify-content:center;font-size:15px;}
+.nav-brand-eyebrow{font-size:9px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.14em;color:var(--purple);line-height:1;display:block;}
+.nav-brand-name{font-size:14px;font-weight:700;color:var(--white);letter-spacing:-0.01em;line-height:1.2;display:block;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--white);}
+.nav-right{display:flex;gap:8px;}
+.pill-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:100px;font-size:12px;font-weight:600;text-decoration:none;transition:all 0.2s;font-family:var(--font);cursor:pointer;border:none;}
+.pill-ghost{background:var(--card2);border:1px solid var(--border-hi);color:var(--white);}
+.pill-ghost:hover{background:var(--purple-dim);}
+.pill-primary{background:var(--purple);color:#fff;}
+.pill-primary:hover{background:var(--purple-hi);}
 
 /* HERO */
-.hero {
-  min-height: 100vh; display: flex; flex-direction: column;
-  justify-content: center; padding: 100px 40px 60px;
-  position: relative; overflow: hidden;
-}
-.glow-tr, .glow-bl {
-  position: absolute; border-radius: 50%; pointer-events: none;
-}
-.glow-tr { top: -120px; right: -120px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(109,40,217,0.18) 0%, transparent 65%); }
-.glow-bl { bottom: -200px; left: -80px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(139,92,246,0.09) 0%, transparent 65%); }
-.hero-inner {
-  position: relative; z-index: 2;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
-  max-width: 1280px; margin: 0 auto; width: 100%;
-}
-.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.14em; color: var(--purple); padding: 5px 12px; border-radius: 100px; background: var(--purple-dim); border: 1px solid var(--border-hi); margin-bottom: 20px; }
-.hero-h1 { font-size: clamp(38px, 4.5vw, 58px); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 20px; }
-.hero-h1 em { font-style: normal; color: var(--purple-hi); }
-.hero-sub { font-size: 16px; line-height: 1.7; color: var(--muted); font-weight: 400; max-width: 420px; margin-bottom: 36px; }
-.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-.btn-lg { padding: 13px 28px; border-radius: 100px; font-size: 14px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; font-family: var(--font); cursor: pointer; border: none; }
-.btn-primary { background: var(--purple); color: #fff; }
-.btn-primary:hover { background: var(--purple-hi); transform: translateY(-1px); }
-.btn-ghost { background: var(--card2); color: var(--white); border: 1px solid var(--border-hi); }
-.btn-ghost:hover { background: var(--purple-dim); }
-.hero-stats { display: flex; gap: 32px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
-.stat-num { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; }
-.stat-lbl { font-size: 11px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-top: 2px; }
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:100px 40px 60px;position:relative;overflow:hidden;}
+.glow-tr{position:absolute;top:-120px;right:-120px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(109,40,217,0.18) 0%,transparent 65%);pointer-events:none;}
+.glow-bl{position:absolute;bottom:-200px;left:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.09) 0%,transparent 65%);pointer-events:none;}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1280px;margin:0 auto;width:100%;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.14em;color:var(--purple);padding:5px 12px;border-radius:100px;background:var(--purple-dim);border:1px solid var(--border-hi);margin-bottom:20px;}
+.hero-h1{font-size:clamp(38px,4.5vw,58px);font-weight:800;line-height:1.08;letter-spacing:-0.03em;margin-bottom:20px;}
+.hero-h1 em{font-style:normal;color:var(--purple-hi);}
+.hero-sub{font-size:16px;line-height:1.7;color:var(--muted);font-weight:400;max-width:420px;margin-bottom:36px;}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.btn-lg{padding:13px 28px;border-radius:100px;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;font-family:var(--font);cursor:pointer;border:none;}
+.btn-primary{background:var(--purple);color:#fff;}
+.btn-primary:hover{background:var(--purple-hi);transform:translateY(-1px);}
+.btn-ghost{background:var(--card2);color:#fff;border:1px solid var(--border-hi);}
+.btn-ghost:hover{background:var(--purple-dim);}
+.hero-stats{display:flex;gap:32px;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);}
+.stat-num{font-size:28px;font-weight:800;letter-spacing:-0.03em;}
+.stat-lbl{font-size:11px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-top:2px;}
 
-/* FEATURES */
-.section { padding: 100px 40px; }
-.section-inner { max-width: 1280px; margin: 0 auto; }
-.sec-eyebrow { display: inline-block; font-size: 10px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.14em; color: var(--purple); margin-bottom: 14px; }
-.sec-h2 { font-size: clamp(32px, 4vw, 48px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 14px; }
-.sec-sub { font-size: 16px; line-height: 1.7; color: var(--muted); font-weight: 400; max-width: 500px; margin-bottom: 56px; }
-.feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border-radius: 16px; overflow: hidden; }
-.feat-card { background: var(--card); padding: 36px 28px; position: relative; overflow: hidden; transition: background 0.3s; }
-.feat-card:hover { background: var(--card2); }
-.feat-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--purple-lo), var(--purple-hi)); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
-.feat-card:hover::after { transform: scaleX(1); }
-.feat-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--purple-dim); border: 1px solid var(--border-hi); display: flex; align-items: center; justify-content: center; font-size: 17px; margin-bottom: 20px; }
-.feat-h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
-.feat-p { font-size: 13px; line-height: 1.7; color: var(--muted); }
-
-/* Responsive */
-@media(max-width:1024px){
-  .hero-inner,.feat-grid{grid-template-columns:1fr}
-  .nav-links{display:none}
-  nav,.section,.cta-sect,footer{padding-left:24px;padding-right:24px}
+/* KIT MOCK */
+.kit-mock-wrap{position:relative;perspective:1000px;}
+.kit-mock{position:relative;width:280px;height:280px;margin:0 auto;transform-style:preserve-3d;animation:rotate 12s linear infinite;}
+.kit-card{position:absolute;width:280px;height:180px;background:var(--card2);border:2px solid var(--border-hi);border-radius:16px;top:50px;left:0;transform-origin:center;display:flex;flex-direction:column;justify-content:center;align-items:center;color:var(--white);font-weight:700;box-shadow:0 20px 60px rgba(0,0,0,0.4);}
+.kit-card:nth-child(1){transform:rotateY(0deg) translateZ(0px);}
+.kit-card:nth-child(2){transform:rotateY(20deg) translateZ(-20px);}
+.kit-card:nth-child(3){transform:rotateY(40deg) translateZ(-40px);}
+.kit-card span{font-size:14px;color:var(--purple-hi);}
+@keyframes rotate{
+  0%{transform:rotateY(0deg);}
+  100%{transform:rotateY(360deg);}
 }
+
+/* Drill library */
+.drills-bg{background:var(--bg);}
+.cat-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;}
+.cat-pill{padding:7px 18px;border-radius:100px;font-size:12px;font-weight:600;border:1px solid var(--border);color:var(--muted);cursor:pointer;background:var(--card);transition:all 0.2s;}
+.cat-pill.on{background:var(--purple);border-color:var(--purple);color:#fff;}
+.cat-pill:hover:not(.on){border-color:var(--border-hi);color:#fff;}
+.drills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.drill-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;transition:border-color 0.2s, transform 0.2s;}
+.drill-card:hover{border-color:var(--border-hi);transform:translateY(-3px);}
+.drill-thumb{height:160px;display:flex;align-items:center;justify-content:center;}
+.thumb-a{background:linear-gradient(135deg,#1a0a3d 0%,#2d1b69 100%);width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+.thumb-b{background:linear-gradient(135deg,#150d30 0%,#3b1fa8 100%);width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+.thumb-c{background:linear-gradient(135deg,#1e0a45 0%,#5b21b6 100%);width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+.drill-body{padding:18px;}
+.drill-cat-tag{display:inline-block;padding:3px 10px;border-radius:100px;font-size:10px;font-weight:600;background:var(--purple-dim);color:var(--purple-hi);margin-bottom:10px;}
+.drill-name{font-size:16px;font-weight:700;letter-spacing:-0.01em;margin-bottom:6px;}
+.drill-blurb{font-size:12px;line-height:1.6;color:var(--muted);margin-bottom:14px;}
+.drill-meta{display:flex;gap:8px;flex-wrap:wrap;}
+.drill-meta-tag{padding:3px 10px;border-radius:100px;font-size:10px;border:1px solid var(--border-hi);color:var(--muted2);}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.hero-inner,.drills-grid{grid-template-columns:1fr}.nav-links{display:none}nav,.section,.cta-sect{padding-left:24px;padding-right:24px}}
 </style>
 </head>
 <body>
@@ -139,7 +99,7 @@ nav {
     <div class="nav-logo-icon">🥋</div>
     <div>
       <span class="nav-brand-eyebrow">Dojang Dynamics</span>
-      <span class="nav-brand-name">Games Platform</span>
+      <span class="nav-brand-name">Kits Library</span>
     </div>
   </a>
   <ul class="nav-links">
@@ -149,8 +109,8 @@ nav {
     <li><a href="#testimonials">Reviews</a></li>
   </ul>
   <div class="nav-right">
-    <a href="https://app.dojangdynamics.store/" class="pill-btn pill-ghost">Sign In</a>
-    <a href="https://app.dojangdynamics.store/" class="pill-btn pill-primary">Start Free Trial</a>
+    <a href="#" class="pill-btn pill-ghost">Sign In</a>
+    <a href="#" class="pill-btn pill-primary">Start Free Trial</a>
   </div>
 </nav>
 
@@ -159,46 +119,76 @@ nav {
   <div class="glow-tr"></div>
   <div class="glow-bl"></div>
   <div class="hero-inner">
-
     <div>
-      <div class="eyebrow">🎮 For Martial Arts Classes</div>
-      <h1 class="hero-h1">Fast, structured<br><em>coaching tools</em><br>for your dojang.</h1>
-      <p class="hero-sub">A library of engaging games and drills designed for live kids' classes. Keep students focused, active, and having fun — every session.</p>
+      <div class="eyebrow">🎯 For Martial Arts Coaches</div>
+      <h1 class="hero-h1">Structured <em>drills & games</em><br>for every class</h1>
+      <p class="hero-sub">Dojang Dynamics Kits provide ready-to-run drills and games designed for live martial arts classes. Keep students engaged, active, and learning every session.</p>
       <div class="hero-actions">
-        <a href="https://app.dojangdynamics.store/" class="btn-lg btn-primary">Open Drill Library →</a>
-        <a href="#drills" class="btn-lg btn-ghost">Browse Games</a>
+        <a href="#drills" class="btn-lg btn-primary">Browse Kits →</a>
+        <a href="#pricing" class="btn-lg btn-ghost">See Pricing</a>
       </div>
       <div class="hero-stats">
-        <div><div class="stat-num">50+</div><div class="stat-lbl">Drills &amp; Games</div></div>
-        <div><div class="stat-num">3</div><div class="stat-lbl">Categories</div></div>
-        <div><div class="stat-num">All</div><div class="stat-lbl">Skill Levels</div></div>
+        <div><div class="stat-num">50+</div><div class="stat-lbl">Drills & Kits</div></div>
+        <div><div class="stat-num">3</div><div class="stat-lbl">Skill Levels</div></div>
+        <div><div class="stat-num">All</div><div class="stat-lbl">Class Sizes</div></div>
       </div>
     </div>
 
+    <!-- KIT MOCKUP -->
+    <div class="kit-mock-wrap">
+      <div class="kit-mock">
+        <div class="kit-card"><span>Kick & Punch Kit</span></div>
+        <div class="kit-card"><span>Agility & Speed Kit</span></div>
+        <div class="kit-card"><span>Coordination Kit</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section class="section feat-bg" id="features">
-  <div class="section-inner">
-    <span class="sec-eyebrow">Features</span>
-    <h2 class="sec-h2">What Makes Our Platform Stand Out</h2>
-    <p class="sec-sub">Every drill is designed to be easy to run, fun, and keep students moving while learning valuable skills.</p>
-    <div class="feat-grid">
-      <div class="feat-card">
-        <div class="feat-icon">⚡</div>
-        <h3 class="feat-h3">Quick Setup</h3>
-        <p class="feat-p">Drills are ready to run in minutes with minimal prep.</p>
+<!-- DRILL LIBRARY -->
+<section id="drills" class="drills-bg" style="padding:80px 40px;">
+  <h2 style="font-size:28px;font-weight:800;margin-bottom:24px;">Drill Kits Library</h2>
+  <div class="cat-pills">
+    <div class="cat-pill on">All</div>
+    <div class="cat-pill">Agility</div>
+    <div class="cat-pill">Coordination</div>
+    <div class="cat-pill">Strength</div>
+  </div>
+  <div class="drills-grid">
+    <div class="drill-card">
+      <div class="drill-thumb thumb-a"></div>
+      <div class="drill-body">
+        <div class="drill-cat-tag">Agility</div>
+        <div class="drill-name">Dragon Dash</div>
+        <div class="drill-blurb">Boost students’ speed with this floor-to-floor tag game.</div>
+        <div class="drill-meta">
+          <span class="drill-meta-tag">10 min</span>
+          <span class="drill-meta-tag">12 players</span>
+        </div>
       </div>
-      <div class="feat-card">
-        <div class="feat-icon">🧠</div>
-        <h3 class="feat-h3">Skill-Focused</h3>
-        <p class="feat-p">Every game targets coordination, focus, and strength.</p>
+    </div>
+    <div class="drill-card">
+      <div class="drill-thumb thumb-b"></div>
+      <div class="drill-body">
+        <div class="drill-cat-tag">Coordination</div>
+        <div class="drill-name">Kick Combo Relay</div>
+        <div class="drill-blurb">Students practice sequences while competing in small teams.</div>
+        <div class="drill-meta">
+          <span class="drill-meta-tag">15 min</span>
+          <span class="drill-meta-tag">All Levels</span>
+        </div>
       </div>
-      <div class="feat-card">
-        <div class="feat-icon">📊</div>
-        <h3 class="feat-h3">Track Progress</h3>
-        <p class="feat-p">Monitor students’ improvement over time with easy metrics.</p>
+    </div>
+    <div class="drill-card">
+      <div class="drill-thumb thumb-c"></div>
+      <div class="drill-body">
+        <div class="drill-cat-tag">Strength</div>
+        <div class="drill-name">Power Strike</div>
+        <div class="drill-blurb">Focus on controlled striking with partner pads.</div>
+        <div class="drill-meta">
+          <span class="drill-meta-tag">12 min</span>
+          <span class="drill-meta-tag">6-10 players</span>
+        </div>
       </div>
     </div>
   </div>
